@@ -19,31 +19,17 @@
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">
-              Главная
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">
-              Преимущества
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">
-              Популярные товары
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">
-              Обратная связь
-            </a>
-          </li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Карточка товара</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="review.html">Отзывы</a></li>
+        </ul>
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -107,25 +93,98 @@
 
         <div class="products-grid">
 
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1000 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+          <article class="product-card product-card--discount">
+            <img class="product-card__image" src="images/keyboard.svg"/>
+            <span class="product-card__badge">Скидка</span>
+            <h3 class="product-card__title">Механическая Клавиатура</h3>
+            <p class="product-card__description">Беспроводная механическая клавиатура.</p>
+            <p class="product-card__price">Цена: 3000 руб.</p>
+            <a class="button" href="product.html">Заказать</a>
           </article>
 
           <article class="product-card">
-            <h3 class="product-card__title">Товар 2</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <img class="product-card__image" src="images/mouse.svg"/>
+            <h3 class="product-card__title">Геймерская мышь</h3>
+            <p class="product-card__description">Игровая беспродная мышка с подсветкой.</p>
             <p class="product-card__price">Цена: 1500 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+            <a class="button" href="order.html">Заказать</a>
           </article>
 
           <article class="product-card">
-            <h3 class="product-card__title">Товар 3</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <img class="product-card__image" src="images/headphones.svg"/>
+            <h3 class="product-card__title">Наушники</h3>
+            <p class="product-card__description">Наушники с шумоподавлением.</p>
             <p class="product-card__price">Цена: 2000 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+            <a class="button" href="order.html">Заказать</a>
+         </article>
+         <article class="product-card">
+            <img class="product-card__image" src="images/office_keyboard.svg"/>
+            <h3 class="product-card__title">Офисная клавиатура</h3>
+            <p class="product-card__description">Надежная и дешёвая клавиатура для офиса.</p>
+            <p class="product-card__price">Цена: 3000 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/carpet.svg"/>
+            <h3 class="product-card__title">Коврик для мыши</h3>
+            <p class="product-card__description">Силиконовый коврик на весь стол.</p>
+            <p class="product-card__price">Цена: 800 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/icro.svg"/>
+            <h3 class="product-card__title">Микрофон</h3>
+            <p class="product-card__description">Микрофон с активным шумоподавлением</p>
+            <p class="product-card__price">Цена: 2500 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
+         </article>
+         <article class="product-card">
+          <img class="product-card__image" src="images/speakers.svg"/>
+            <h3 class="product-card__title">Колонки</h3>
+            <p class="product-card__description">Колонки для прослушивание с пк.</p>
+            <p class="product-card__price">Цена: 1300 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/screen.svg"/>
+            <h3 class="product-card__title">4K Ultra HD Монитор</h3>
+            <p class="product-card__description">Ультраширокий экран с 4K разрешением.</p>
+            <p class="product-card__price">Цена: 25000 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/magnetic_keyboard.svg"/>
+            <h3 class="product-card__title">Магнитная клавиатура</h3>
+            <p class="product-card__description">Магнитная клавиатура с возможность менять отклик свитчей.</p>
+            <p class="product-card__price">Цена: 8000 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
+         </article>
+         <article class="product-card">
+          <img class="product-card__image" src="images/office_mouse.svg"/>
+            <h3 class="product-card__title">Офисная мышка</h3>
+            <p class="product-card__description">Надёжный и дешёвый вариант для офисной работы.</p>
+            <p class="product-card__price">Цена: 400 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/chair.svg"/>
+            <h3 class="product-card__title">Геймерский стул</h3>
+            <p class="product-card__description">Геймерский стул с яркой красной расцветкой и удобной посадкой</p>
+            <p class="product-card__price">Цена: 12000 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="images/table.svg"/>
+            <h3 class="product-card__title">Игровой стол</h3>
+            <p class="product-card__description">Стол для игр с подсветкой и регулировкой высоты.</p>
+            <p class="product-card__price">Цена: 20000 руб.</p>
+            <a class="button" href="order.html">Заказать</a>
          </article>
         </div>
       </section>

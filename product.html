@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Карточка товара клавиатуры.">
+  <title>Карточка товара клавиатуры</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html">Карточка товара</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="review.html">Отзывы</a></li>
+        </ul>
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Механическая клавиатура</span>
+    </nav>
+    <section class="product">
+      <div class="product__info">
+        <img class="product__image" src="images/keyboard.svg", alt="Фотокарточка клавиатуры"/>
+        <div>
+          <h2 class="product-card__info">Механическая клавиатура</h2>
+          <p class="product__description">Крутая геймерская беспроводная механическая клавиатура. Абсолютно бесшумные свечи. Настраиваемая rgb подсветка.</p>
+          <div class="product__price">
+            <h3>3000 руб.</h3>
+          </div>
+          <p class="product--status-in">В наличие</p>
+          <a class="button button--primary" href="order.html">Подать заявку</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2 class="section__title">Характеристики</h2>
+      <table class="product-table">
+        <thead class="product-table__head">
+          <tr class="product-table__row">
+            <th class="product-table__cell product-table__cell--header">Параметр</th>
+            <th class="product-table__cell product-table__cell--header">Значение</th>
+          </tr>
+        </thead>
+        <tbody class="product-table__body">
+          <tr class="product-table__row">
+            <td class="product-table__cell product-table__cell--title">Тип клавиатуры</td>
+            <td class="product-table__cell">Механическая</td>
+          </tr>
+          <tr class="product-table__row">
+            <td class="product-table__cell product-table__cell--title">Тип подключения</td>
+            <td class="product-table__cell">Беспроводной</td>
+          </tr>
+          <tr class="product-table__row">
+            <td class="product-table__cell product-table__cell--title">Тип свичей</td>
+            <td class="product-table__cell">Тактильные</td>
+          </tr>
+          <tr class="product-table__row">
+            <td class="product-table__cell product-table__cell--title">Вес</td>
+            <td class="product-table__cell">1300г.</td>
+          </tr>
+          <tr class="product-table__row">
+            <td class="product-table__cell product-table__cell--title">Цвет</td>
+            <td class="product-table__cell">Белый</td>
+          </tr>
+          <tr class="product-table__row">
+            <td class="product-table__cell product-table__cell--title">Гарантия</td>
+            <td class="product-table__cell">12 мес.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+<a href="#" class="scroll-to-top" aria-label="Наверх">↑</a>
+</body>
+</html>

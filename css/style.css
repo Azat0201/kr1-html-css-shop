@@ -16,6 +16,7 @@
   --color-success: #168a2f;
   --color-success-bg: #eefaf0;
   --color-white: #ffffff;
+  --color-button: #cccccc;
 
   /* Отступы */
   --space-xs: 4px;
@@ -31,6 +32,7 @@
 
   /* Размеры */
   --container-width: 1100px;
+  --container-height: 200px;
 }
 
 /* ===============================
@@ -59,7 +61,18 @@ footer {
   padding: var(--space-lg);
 }
 
+main {
+  margin-top: 25vh;
+}
+
 header {
+  position: fixed;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 10;
   background-color: var(--color-surface);
 }
 
@@ -85,19 +98,22 @@ a:focus-visible {
 }
 
 .site-header {
+  width: 100%;
   background-color: var(--color-surface);
 }
 
 .site-header__inner {
-  max-width: var(--container-width);
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  padding: var(--space-lg);
 }
 
 .site-header__logo {
   font-weight: 700;
+  font-size: 30px;
   color: var(--color-text);
   text-decoration: none;
+  text-align: center;
 }
 
 .site-nav__list {
@@ -157,6 +173,7 @@ a:focus-visible {
 }
 
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -165,6 +182,17 @@ a:focus-visible {
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
 }
+
+.product-card__badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: 4px 8px;
+  color: var(--color-white);
+  background-color: var(--color-danger);
+  border-radius: var(--radius-sm);
+}
+
 
 .product-card:hover {
   border-color: var(--color-primary);
@@ -198,12 +226,20 @@ a:focus-visible {
 }
 
 .product-card__button {
+  text-decoration: none;
+  color: var(--color-text);
   margin-top: auto;
   align-self: flex-start;
+  background-color: var(--color-button);
 }
 
 .product-card h3 {
   margin-top: 0;
+}
+
+.product-card__image {
+  max-width: 100%;
+  height: 250px;
 }
 
 .products-grid {
@@ -211,6 +247,26 @@ a:focus-visible {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
 }
+
+.product__price {
+  font-weight: bold;
+}
+
+.product {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+}
+
+.product__info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.product--status-in { color: var(--color-success); }
+.product--status-out { color: var(--color-muted); }
+
+.product__image { max-width: 300px;}
 
 .button {
   display: inline-block;
@@ -228,6 +284,7 @@ a:focus-visible {
 }
 
 .button--primary:hover {
+  color: var(--color-white);
   background-color: var(--color-primary-dark);
 }
 
@@ -261,9 +318,147 @@ a:focus-visible {
   background-color: var(--color-surface);
 }
 
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs__link {
+  color: var(--color-primary);
+}
+
+.breadcrumbs__link + .breadcrumbs__link::before {
+  content: " / ";
+}
+
+.breadcrumbs__current::before {
+  content: " / ";
+  color: var(--color-muted);
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
+.catalog-layout {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "filters products";
+  gap: var(--space-lg);
+  align-items: flex-start; 
+}
+
+.catalog-filters {
+  top: calc(25vh + 20px);
+  display: grid;
+  position: sticky;
+  grid-area: filters;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  align-self: start; 
+}
+
+.catalog-products {
+  grid-area: products;
+}
+
+.filters-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.filters-form fieldset {
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.filters-form legend {
+  font-weight: 700;
+}
+
+.filters-form label {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: var(--space-xs);
+  width: 54px;
+  height: 54px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-to-top:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  transform: translateY(-4px);
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.question {
+  border: 1px solid var(--color-button);
+  padding: 0 var(--space-md);
+  cursor: pointer;
+  background-color: var(--color-bg);
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.question.active .answer {
+  max-height: 200px;
+  opacity: 1;
+  padding: 0 var(--space-md);
+}
+ё
+.review {
+  background-color: var(--color-bg);
+}
+
 /* ===============================
    5. Форма и модальное окно
    =============================== */
+
+.order-dialog {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl); 
+}
 
 .order-form__field {
   margin-bottom: var(--space-md);
@@ -309,6 +504,14 @@ select[aria-invalid="true"] {
   border-color: var(--color-danger);
 }
 
+.form-field--cehckbox {
+  display: flex;
+}
+
+.order-form__input--checkbox {
+  width: 50px;
+}
+
 .success-message {
   max-width: var(--container-width);  
   margin: var(--space-lg) auto;
@@ -317,107 +520,28 @@ select[aria-invalid="true"] {
   background-color: var(--color-success-bg);
 }
 
-.breadcrumbs {
-  max-width: var(--container-width);
-  margin: 0 auto var(--space-md);
-  font-size: 14px;
-  color: var(--color-muted);
+/* ===============================
+   6. Компонент: Таблица продуктов
+   =============================== */
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: var(--color-bg);
 }
 
-.breadcrumbs__link {
-  color: var(--color-primary);
-}
-
-.breadcrumbs__current::before {
-  content: " / ";
-  color: var(--color-muted);
-}
-
-:target {
-  outline: 2px dashed var(--color-primary);
-  outline-offset: 4px;
-}
-
-.catalog-layout {
-  max-width: var(--container-width);
-  margin: 0 auto var(--space-xl);
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  grid-template-areas: "filters products";
-  gap: var(--space-lg);
-}
-
-.catalog-filters {
-  grid-area: filters;
+.product-table__cell {
   padding: var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.catalog-products {
-  grid-area: products;
+.product-table__cell--header {
+  font-weight: 700;
+  background-color: var(--color-surface-accent);
+  color: var(--color-primary-dark);
 }
 
-.filters-form {
-  display: grid;
-  gap: var(--space-md);
-}
-
-.filters-form fieldset {
-  margin: 0;
-  padding: var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-}
-
-.filters-form legend {
+.product-table__cell--title {
   font-weight: 700;
 }
-
-.filters-form label {
-  display: block;
-  margin-bottom: var(--space-sm);
-}
-
-.filters-form input[type="number"] {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font: inherit;
-}
-
-.scroll-to-top {
-  position: fixed;
-  bottom: var(--space-xl);
-  right: var(--space-xl);
-  z-index: 1000;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--color-white);
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.scroll-to-top:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-white);
-  transform: translateY(-4px);
-}
-
-.scroll-to-top:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-}
-

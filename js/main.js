@@ -43,3 +43,6 @@ orderForm.addEventListener('submit', (event) => {
   orderDialog.close();
 });
 
+function toggleInfo(element) {
+  element.classList.toggle('active');
+}
